@@ -1,1 +1,122 @@
-Hello world
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arturo Ramirez - Servicios Técnicos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            flex: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Arturo Ramirez - Servicios Técnicos</h1>
+    </header>
+    <div class="container">
+        <h1>BIENVENIDO</h1>
+       <div class="welcome-section">
+    <h2 class="section-title">¡Soluciones técnicas en el area de veracruz, agenda hoy tu cita y me contactaré contigo por whatsapp o llamada</h2>
+    <p class="section-description">Con una amplia trayectoria en diversas disciplinas y un profundo conocimiento en tecnología, estoy aquí para brindarte soluciones a la medida de tus desafíos técnicos.</p>
+</div>
+
+<div class="services-section">
+    <h3 class="services-title">Descubre mis habilidades y experiencia especializada</h3>
+    <ul class="services-list">
+        <li>Mantenimiento e instalación de cableado eléctrico y dispositivos para optimizar la eficiencia y seguridad en tu hogar o negocio.</li>
+        <li>Especialización en sistemas de cámaras de seguridad: protege tus espacios con tranquilidad y confianza.</li>
+        <li>Experiencia en seguridad hogareña avanzada, incorporando tecnologías como fotoceldas, sensores, alarmas y sistemas infrarrojos para un entorno seguro.</li>
+        <li>Mantenimiento y optimización garantizada de equipos de cómputo, asegurando su funcionamiento óptimo y confiable.</li>
+        <li>Pericia en informática forense: recupera archivos vulnerables de discos duros y aborda desafíos relacionados con la seguridad digital.</li>
+    </ul>
+</div>
+
+<div class="solutions-section">
+    <h3 class="solutions-title">¡Soluciones a tu alcance!</h3>
+    <p class="solutions-description">¡No permitas que los obstáculos en tu hogar te roben la paz! Cuenta conmigo, tu técnico de confianza, para superar cualquier desafío tecnológico. Desde la instalación de sistemas de seguridad avanzados hasta el ajuste óptimo de tus dispositivos electrónicos, estoy a tu disposición para garantizarte soluciones que marcan la diferencia. Tu satisfacción y seguridad son mi prioridad. ¡Permíteme ser el héroe detrás de tus soluciones técnicas!</p>
+</div>
+
+<div class="contact-section">
+    <p class="contact-description">¡Estoy deseando colaborar contigo y brindarte la mejor asistencia técnica posible! Contáctame para comenzar a resolver tus desafíos.</p>
+</div>
+        <form>
+            <label for="servicio">Servicio requerido:</label>
+            <select id="servicio" name="servicio">
+                <option value="electricidad">Electricidad</option>
+                <option value="informatica">Informática</option>
+                <option value="automatizacion">Automatización del Hogar</option>
+                <option value="seguridad">Seguridad del Hogar</option>
+            </select><br><br>
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" name="direccion"><br>
+            <label for="entre_calles">Entre:</label>
+            <input type="text" id="entre_calles" name="entre_calles"><br>
+            <label for="colonia">Colonia:</label>
+            <input type="text" id="colonia" name="colonia"><br>
+            <label for="nombre_cliente">Nombre cliente:</label>
+            <input type="text" id="nombre_cliente" name="nombre_cliente"><br>
+            <label for="contacto">Contacto para comunicarme contigo:</label>
+            <input type="text" id="contacto" name="contacto"><br>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+    <footer>
+        <p></p>
+        <p>—Ing. Arturo Ramirez</p>
+    </footer>
+</body>
+</html>

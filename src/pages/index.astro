@@ -1,0 +1,268 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Ing. Arturo Ramirez - Perfil Profesional">
+	<section class="hero container">
+		<div class="hero-content">
+			<h1>Ing. Arturo Ramirez</h1>
+			<h2>Especialista en Soluciones Tecnológicas y Seguridad Integrada</h2>
+			<p class="bio">
+				Con una amplia trayectoria en diversas disciplinas y un profundo conocimiento en tecnología, me dedico a brindar soluciones a la medida de tus desafíos técnicos. Mi compromiso es asegurar el funcionamiento óptimo de tus sistemas y proteger tus espacios con el más alto nivel de profesionalismo.
+			</p>
+			<a href="#contacto" class="btn">Contactar</a>
+		</div>
+	</section>
+
+	<section class="about container">
+		<h2 class="section-title">Sobre Mí</h2>
+		<div class="about-content">
+			<p>Comencé en sistemas, pero pronto entendí que los problemas más interesantes rara vez pertenecen a una sola disciplina.</p>
+			<p>El código terminó llevándome más allá del software: hacia la electrónica, los sistemas industriales y el derecho.</p>
+			<p>Es precisamente en esa intersección donde más me interesa trabajar: cuando un problema técnico exige comprender no solo cómo construir una solución, sino también el entorno en el que debe funcionar.</p>
+
+			<pre class="ascii-art">
+Software ─────── Ingeniería
+    │                │
+    ├──── Sistemas ──┤
+    │                │
+Electrónica ───── Derecho
+			</pre>
+
+			<p>Como <strong>Ingeniero en Sistemas y Abogado</strong>, me interesan especialmente los proyectos donde convergen estas disciplinas:</p>
+			<p class="disciplines">
+				Ingeniería de Software · Automatización · Sistemas Industriales · Electrónica · Legal Tech · Propiedad Intelectual · Derechos de Autor
+			</p>
+
+			<p>Mis tecnologías favoritas son <strong>Python, Java y JavaScript</strong>, utilizando principalmente <strong>MySQL y SQLite</strong> para persistencia de datos.</p>
+			<p>También colaboro con personas, profesionales y despachos jurídicos que requieren consultoría tecnológica, particularmente cuando el problema se encuentra en algún punto entre software, ingeniería y derecho.</p>
+		</div>
+	</section>
+
+	<section class="services container">
+		<h2 class="section-title">Áreas de Especialidad</h2>
+		<div class="grid">
+			<div class="card">
+				<h3>⚡ Electricidad y Mantenimiento</h3>
+				<p>Mantenimiento e instalación de cableado eléctrico y dispositivos para optimizar la eficiencia y seguridad en el hogar o negocio.</p>
+			</div>
+			<div class="card">
+				<h3>💻 Informática y Soporte</h3>
+				<p>Mantenimiento y optimización garantizada de equipos de cómputo, asegurando su funcionamiento óptimo, confiable y veloz.</p>
+			</div>
+			<div class="card">
+				<h3>🔒 Seguridad Avanzada</h3>
+				<p>Sistemas de cámaras de seguridad, fotoceldas, sensores, alarmas y sistemas infrarrojos para garantizar un entorno seguro.</p>
+			</div>
+			<div class="card">
+				<h3>🔍 Informática Forense</h3>
+				<p>Recuperación de archivos vulnerables de discos duros y abordaje de desafíos relacionados con la seguridad y privacidad digital.</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="mission container">
+		<h2 class="section-title">Mi Compromiso</h2>
+		<p>
+			¡No permitas que los obstáculos tecnológicos detengan tus actividades! Como tu técnico de confianza, supero cualquier desafío: desde la instalación de sistemas de seguridad avanzados hasta el ajuste óptimo de tus dispositivos electrónicos. Tu satisfacción y seguridad son mi prioridad.
+		</p>
+	</section>
+
+	<section id="contacto" class="contact container">
+		<h2 class="section-title">Contáctame</h2>
+		<p>¿Listo para colaborar? Agenda hoy tu cita y me contactaré contigo por WhatsApp o llamada.</p>
+		
+		<form class="contact-form" action="#" method="POST">
+			<div class="form-group">
+				<label for="servicio">Servicio de interés:</label>
+				<select id="servicio" name="servicio">
+					<option value="electricidad">Electricidad</option>
+					<option value="informatica">Informática</option>
+					<option value="automatizacion">Automatización del Hogar</option>
+					<option value="seguridad">Seguridad del Hogar</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="nombre">Nombre completo:</label>
+				<input type="text" id="nombre" name="nombre" required>
+			</div>
+			<div class="form-group">
+				<label for="contacto_via">Teléfono de contacto:</label>
+				<input type="text" id="contacto_via" name="contacto_via" required>
+			</div>
+			<button type="button" class="btn btn-submit" onclick="alert('Formulario de demostración. Configura un backend o servicio como Formspree para recibir correos.')">Enviar Solicitud</button>
+		</form>
+	</section>
+</Layout>
+
+<style>
+	.hero {
+		text-align: center;
+		padding: 4rem 20px;
+		background: #fff;
+		border-radius: 8px;
+		box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+		margin-bottom: 3rem;
+	}
+
+	.hero h1 {
+		font-size: 2.5rem;
+		color: var(--primary-color);
+		margin-bottom: 0.5rem;
+	}
+
+	.hero h2 {
+		font-size: 1.25rem;
+		color: var(--accent-color);
+		margin-bottom: 1.5rem;
+		font-weight: 500;
+	}
+
+	.bio {
+		max-width: 800px;
+		margin: 0 auto 2rem auto;
+		font-size: 1.1rem;
+		color: #555;
+	}
+
+	.btn {
+		display: inline-block;
+		background-color: var(--accent-color);
+		color: #fff;
+		padding: 0.8rem 2rem;
+		text-decoration: none;
+		border-radius: 4px;
+		font-weight: bold;
+		transition: background-color 0.3s;
+		border: none;
+		cursor: pointer;
+	}
+
+	.btn:hover {
+		background-color: #2980b9;
+	}
+
+	.section-title {
+		text-align: center;
+		margin-bottom: 2rem;
+		color: var(--primary-color);
+		font-size: 2rem;
+	}
+
+	.about, .services, .mission, .contact {
+		margin-bottom: 3rem;
+	}
+
+	.about-content {
+		background: #fff;
+		padding: 2.5rem;
+		border-radius: 8px;
+		box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+		color: #444;
+		font-size: 1.1rem;
+	}
+
+	.about-content p {
+		margin-bottom: 1rem;
+	}
+
+	.ascii-art {
+		background: var(--bg-color);
+		padding: 1.5rem;
+		border-radius: 6px;
+		font-family: 'Courier New', Courier, monospace;
+		font-size: 1rem;
+		text-align: center;
+		color: var(--primary-color);
+		margin: 2rem 0;
+		overflow-x: auto;
+		white-space: pre;
+	}
+
+	.disciplines {
+		font-weight: 500;
+		color: var(--accent-color);
+		text-align: center;
+		margin: 1.5rem 0;
+		padding: 1rem;
+		background: #e8f4f8;
+		border-radius: 6px;
+	}
+
+	.grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 2rem;
+	}
+
+	.card {
+		background: #fff;
+		padding: 2rem;
+		border-radius: 8px;
+		box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+		transition: transform 0.3s;
+	}
+
+	.card:hover {
+		transform: translateY(-5px);
+	}
+
+	.card h3 {
+		color: var(--secondary-color);
+		margin-bottom: 1rem;
+	}
+
+	.mission p {
+		background: #fff;
+		padding: 2rem;
+		border-radius: 8px;
+		box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+		text-align: center;
+		font-size: 1.1rem;
+		font-style: italic;
+	}
+
+	.contact {
+		background: #fff;
+		padding: 3rem 2rem;
+		border-radius: 8px;
+		box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+	}
+
+	.contact p {
+		text-align: center;
+		margin-bottom: 2rem;
+	}
+
+	.contact-form {
+		max-width: 600px;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	.form-group {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	.form-group label {
+		font-weight: bold;
+		color: var(--secondary-color);
+	}
+
+	.form-group input,
+	.form-group select {
+		padding: 0.8rem;
+		border: 1px solid #ddd;
+		border-radius: 4px;
+		font-size: 1rem;
+	}
+
+	.btn-submit {
+		width: 100%;
+		font-size: 1.1rem;
+	}
+</style>

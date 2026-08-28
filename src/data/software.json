@@ -1,0 +1,10 @@
+[
+  {
+    "id": "demo-project",
+    "title": "Proyecto de Demostración",
+    "description": "Este es un proyecto de demostración. Puedes eliminarlo desde el generador.",
+    "image": "https://via.placeholder.com/600x400?text=Proyecto+Demo",
+    "youtube": "https://youtube.com",
+    "github": "https://github.com/Baalgarthem"
+  }
+]

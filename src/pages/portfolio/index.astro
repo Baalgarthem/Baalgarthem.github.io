@@ -1,0 +1,137 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Portafolio - Ing. Arturo Ramirez">
+	<section class="portfolio container">
+		<h1 class="page-title">Mi Portafolio de Proyectos</h1>
+		<p class="subtitle">Una selección de trabajos y soluciones técnicas implementadas exitosamente.</p>
+
+		<div class="projects-grid">
+			<article class="project-card">
+				<div class="project-image placeholder-img">
+					<span>📷 Foto del Proyecto</span>
+				</div>
+				<div class="project-info">
+					<h3>Instalación CCTV Empresarial</h3>
+					<span class="tag">Seguridad Avanzada</span>
+					<p>Diseño e implementación de un sistema de circuito cerrado con monitoreo remoto y sensores infrarrojos para una bodega de alta seguridad.</p>
+				</div>
+			</article>
+
+			<article class="project-card">
+				<div class="project-image placeholder-img">
+					<span>📷 Foto del Proyecto</span>
+				</div>
+				<div class="project-info">
+					<h3>Mantenimiento de Servidores y Redes</h3>
+					<span class="tag">Informática y Soporte</span>
+					<p>Reestructuración de cableado de red y optimización de servidores locales para reducir tiempos de inactividad en oficinas administrativas.</p>
+				</div>
+			</article>
+
+			<article class="project-card">
+				<div class="project-image placeholder-img">
+					<span>📷 Foto del Proyecto</span>
+				</div>
+				<div class="project-info">
+					<h3>Domótica Residencial</h3>
+					<span class="tag">Automatización</span>
+					<p>Integración de fotoceldas, alarmas inteligentes y control de iluminación centralizado para un hogar moderno y seguro.</p>
+				</div>
+			</article>
+
+			<article class="project-card">
+				<div class="project-image placeholder-img">
+					<span>📷 Foto del Proyecto</span>
+				</div>
+				<div class="project-info">
+					<h3>Recuperación de Datos Forense</h3>
+					<span class="tag">Informática Forense</span>
+					<p>Extracción y recuperación exitosa de información crítica de discos duros mecánicos dañados para una firma legal.</p>
+				</div>
+			</article>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.portfolio {
+		padding: 2rem 20px;
+	}
+
+	.page-title {
+		text-align: center;
+		color: var(--primary-color);
+		font-size: 2.5rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.subtitle {
+		text-align: center;
+		color: #666;
+		font-size: 1.1rem;
+		margin-bottom: 3rem;
+	}
+
+	.projects-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		gap: 2rem;
+	}
+
+	.project-card {
+		background: #fff;
+		border-radius: 8px;
+		overflow: hidden;
+		box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+		transition: transform 0.3s;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.project-card:hover {
+		transform: translateY(-5px);
+	}
+
+	.placeholder-img {
+		height: 200px;
+		background-color: #ecf0f1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #95a5a6;
+		font-weight: bold;
+		border-bottom: 1px solid #eee;
+	}
+
+	.project-info {
+		padding: 1.5rem;
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.project-info h3 {
+		color: var(--secondary-color);
+		margin-bottom: 0.5rem;
+		font-size: 1.25rem;
+	}
+
+	.tag {
+		display: inline-block;
+		background-color: #e8f4f8;
+		color: var(--accent-color);
+		padding: 0.2rem 0.6rem;
+		border-radius: 4px;
+		font-size: 0.8rem;
+		font-weight: bold;
+		margin-bottom: 1rem;
+		align-self: flex-start;
+	}
+
+	.project-info p {
+		color: #555;
+		font-size: 0.95rem;
+	}
+</style>

@@ -1,6 +1,22 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import portfolioData from '../../data/portfolio.json';
+import portfolioDataRaw from '../../data/portfolio.json';
+
+interface Project {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+  link: string;
+}
+
+interface Section {
+  id: string;
+  title: string;
+  items: Project[];
+}
+
+const portfolioData = portfolioDataRaw as { sections: Section[] };
 ---
 
 <Layout title="Portafolio - Arturo Ramirez">

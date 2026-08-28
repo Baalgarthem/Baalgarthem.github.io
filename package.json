@@ -12,7 +12,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "manage": "node scripts/manage_projects.js",
-    "deploy": "gh-pages -d dist -t true"
+    "deploy": "gh-pages -d dist -t"
   },
   "dependencies": {
     "astro": "^7.2.9"

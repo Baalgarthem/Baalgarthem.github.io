@@ -19,6 +19,7 @@ interface Project {
 interface Section {
   id: string;
   title: string;
+  description?: string;
   items: Project[];
 }
 
@@ -35,7 +36,10 @@ const portfolioData = portfolioDataRaw as unknown as { sections: Section[] };
 		{portfolioData.sections.map((section) => (
 			<section class="portfolio-section" id={section.id}>
 				<div class="section-header animate-on-scroll">
-					<h2 class="section-title">{section.title}</h2>
+					<div class="section-title-wrapper">
+						<h2 class="section-title">{section.title}</h2>
+						{section.description && <p class="section-description">{section.description}</p>}
+					</div>
 					<div class="section-divider"></div>
 				</div>
 
@@ -189,12 +193,25 @@ const portfolioData = portfolioDataRaw as unknown as { sections: Section[] };
 		gap: 1.5rem;
 	}
 
+	.section-title-wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 0.3rem;
+	}
+
 	.section-title {
 		margin: 0;
 		font-family: 'Manrope', sans-serif;
 		font-size: 2rem;
 		color: var(--ink);
 		font-weight: 600;
+	}
+
+	.section-description {
+		margin: 0;
+		color: var(--muted);
+		font-size: 1.05rem;
+		max-width: 700px;
 	}
 
 	.section-divider {

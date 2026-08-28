@@ -11,7 +11,7 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "manage": "node scripts/manage_projects.js",
+    "manage": "node scripts/manage_portfolio.js",
     "deploy": "gh-pages -d dist -t"
   },
   "dependencies": {

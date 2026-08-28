@@ -3,7 +3,7 @@ interface Props { title: string; description?: string; }
 const { title, description = 'Perfil profesional de Arturo Ramirez, ingeniero en sistemas y abogado.' } = Astro.props;
 const pathname = Astro.url.pathname;
 const links = [
-	{ href: '/', label: 'Inicio' }, { href: '/software/', label: 'Software' },
+	{ href: '/', label: 'Inicio' },
 	{ href: '/portfolio/', label: 'Portafolio' }, { href: '/contacto/', label: 'Contacto' },
 ];
 ---

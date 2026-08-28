@@ -1,137 +1,224 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import portfolioData from '../../data/portfolio.json';
 ---
 
-<Layout title="Portafolio - Ing. Arturo Ramirez">
-	<section class="portfolio container">
-		<h1 class="page-title">Mi Portafolio de Proyectos</h1>
-		<p class="subtitle">Una selección de trabajos y soluciones técnicas implementadas exitosamente.</p>
-
-		<div class="projects-grid">
-			<article class="project-card">
-				<div class="project-image placeholder-img">
-					<span>📷 Foto del Proyecto</span>
-				</div>
-				<div class="project-info">
-					<h3>Instalación CCTV Empresarial</h3>
-					<span class="tag">Seguridad Avanzada</span>
-					<p>Diseño e implementación de un sistema de circuito cerrado con monitoreo remoto y sensores infrarrojos para una bodega de alta seguridad.</p>
-				</div>
-			</article>
-
-			<article class="project-card">
-				<div class="project-image placeholder-img">
-					<span>📷 Foto del Proyecto</span>
-				</div>
-				<div class="project-info">
-					<h3>Mantenimiento de Servidores y Redes</h3>
-					<span class="tag">Informática y Soporte</span>
-					<p>Reestructuración de cableado de red y optimización de servidores locales para reducir tiempos de inactividad en oficinas administrativas.</p>
-				</div>
-			</article>
-
-			<article class="project-card">
-				<div class="project-image placeholder-img">
-					<span>📷 Foto del Proyecto</span>
-				</div>
-				<div class="project-info">
-					<h3>Domótica Residencial</h3>
-					<span class="tag">Automatización</span>
-					<p>Integración de fotoceldas, alarmas inteligentes y control de iluminación centralizado para un hogar moderno y seguro.</p>
-				</div>
-			</article>
-
-			<article class="project-card">
-				<div class="project-image placeholder-img">
-					<span>📷 Foto del Proyecto</span>
-				</div>
-				<div class="project-info">
-					<h3>Recuperación de Datos Forense</h3>
-					<span class="tag">Informática Forense</span>
-					<p>Extracción y recuperación exitosa de información crítica de discos duros mecánicos dañados para una firma legal.</p>
-				</div>
-			</article>
-		</div>
+<Layout title="Portafolio - Arturo Ramirez">
+	<section class="portfolio-header container">
+		<h1 class="page-title animate-on-scroll">Mi Portafolio</h1>
+		<p class="subtitle animate-on-scroll">Experiencia multidisciplinaria dividida en áreas de especialidad.</p>
 	</section>
+
+	<div class="container sections-wrapper">
+		{portfolioData.sections.map((section) => (
+			<section class="portfolio-section" id={section.id}>
+				<div class="section-header animate-on-scroll">
+					<h2 class="section-title">{section.title}</h2>
+					<div class="section-divider"></div>
+				</div>
+
+				{section.items.length === 0 ? (
+					<div class="empty-state animate-on-scroll">
+						<p>Aún no hay proyectos añadidos en esta sección.</p>
+					</div>
+				) : (
+					<div class="projects-grid">
+						{section.items.map((item) => (
+							<article class="project-card animate-on-scroll">
+								<div class="project-image">
+									{item.image ? (
+										<img src={item.image} alt={item.title} loading="lazy" />
+									) : (
+										<div class="placeholder-img">
+											<span>📷 Sin imagen</span>
+										</div>
+									)}
+								</div>
+								<div class="project-info">
+									<h3>{item.title}</h3>
+									<p>{item.description}</p>
+									{item.link && (
+										<a href={item.link} target="_blank" rel="noopener noreferrer" class="project-link">
+											Ver más <span aria-hidden="true">→</span>
+										</a>
+									)}
+								</div>
+							</article>
+						))}
+					</div>
+				)}
+			</section>
+		))}
+	</div>
 </Layout>
 
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('fade-in');
+					observer.unobserve(entry.target);
+				}
+			});
+		}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+		document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+	});
+</script>
+
 <style>
-	.portfolio {
-		padding: 2rem 20px;
+	/* Animaciones */
+	.animate-on-scroll { opacity:0; transform:translateY(30px); transition:opacity 0.7s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1); }
+	.fade-in { opacity:1; transform:translateY(0); }
+
+	.portfolio-header {
+		padding-block: clamp(4rem, 8vw, 6rem) 2rem;
+		text-align: center;
 	}
 
 	.page-title {
-		text-align: center;
-		color: var(--primary-color);
-		font-size: 2.5rem;
-		margin-bottom: 0.5rem;
+		margin: 0;
+		font-family: 'Manrope', sans-serif;
+		font-size: clamp(3rem, 6vw, 4.5rem);
+		color: var(--forest);
+		font-weight: 700;
+		letter-spacing: -0.04em;
 	}
 
 	.subtitle {
+		margin: 1rem auto 0;
+		max-width: 600px;
+		color: var(--muted);
+		font-size: clamp(1.1rem, 2vw, 1.25rem);
+	}
+
+	.sections-wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: clamp(4rem, 8vw, 7rem);
+		padding-bottom: 6rem;
+	}
+
+	.portfolio-section {
+		display: flex;
+		flex-direction: column;
+		gap: 2.5rem;
+	}
+
+	.section-header {
+		display: flex;
+		align-items: center;
+		gap: 1.5rem;
+	}
+
+	.section-title {
+		margin: 0;
+		font-family: 'Manrope', sans-serif;
+		font-size: 2rem;
+		color: var(--ink);
+		font-weight: 600;
+	}
+
+	.section-divider {
+		flex: 1;
+		height: 1px;
+		background: var(--line);
+	}
+
+	.empty-state {
+		padding: 3rem;
 		text-align: center;
-		color: #666;
-		font-size: 1.1rem;
-		margin-bottom: 3rem;
+		border: 1px dashed var(--line);
+		border-radius: var(--radius);
+		color: var(--muted);
+		background: rgba(251, 250, 246, 0.4);
 	}
 
 	.projects-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-		gap: 2rem;
+		grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+		gap: 2.5rem;
 	}
 
 	.project-card {
-		background: #fff;
-		border-radius: 8px;
+		background: var(--surface);
+		border-radius: var(--radius);
 		overflow: hidden;
-		box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-		transition: transform 0.3s;
+		border: 1px solid var(--line);
+		box-shadow: 0 12px 40px rgba(29, 42, 38, 0.03);
+		transition: transform 0.3s, box-shadow 0.3s;
 		display: flex;
 		flex-direction: column;
 	}
 
 	.project-card:hover {
 		transform: translateY(-5px);
+		box-shadow: 0 20px 50px rgba(29, 42, 38, 0.08);
+	}
+
+	.project-image {
+		height: 220px;
+		overflow: hidden;
+		background: rgba(22, 33, 31, 0.03);
+	}
+
+	.project-image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.5s;
+	}
+
+	.project-card:hover .project-image img {
+		transform: scale(1.05);
 	}
 
 	.placeholder-img {
-		height: 200px;
-		background-color: #ecf0f1;
+		height: 100%;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		color: #95a5a6;
-		font-weight: bold;
-		border-bottom: 1px solid #eee;
+		color: var(--muted);
+		font-weight: 500;
+		font-size: 0.9rem;
 	}
 
 	.project-info {
-		padding: 1.5rem;
+		padding: 2rem;
 		flex: 1;
 		display: flex;
 		flex-direction: column;
 	}
 
 	.project-info h3 {
-		color: var(--secondary-color);
-		margin-bottom: 0.5rem;
-		font-size: 1.25rem;
-	}
-
-	.tag {
-		display: inline-block;
-		background-color: #e8f4f8;
-		color: var(--accent-color);
-		padding: 0.2rem 0.6rem;
-		border-radius: 4px;
-		font-size: 0.8rem;
-		font-weight: bold;
-		margin-bottom: 1rem;
-		align-self: flex-start;
+		color: var(--forest);
+		margin: 0 0 0.8rem;
+		font-family: 'Manrope', sans-serif;
+		font-size: 1.3rem;
 	}
 
 	.project-info p {
-		color: #555;
+		color: var(--muted);
 		font-size: 0.95rem;
+		line-height: 1.6;
+		margin: 0 0 1.5rem;
+		flex: 1;
+	}
+
+	.project-link {
+		align-self: flex-start;
+		color: var(--accent);
+		font-weight: 600;
+		text-decoration: none;
+		font-size: 0.9rem;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+		transition: color 0.2s;
+	}
+
+	.project-link:hover {
+		color: var(--accent-dark);
 	}
 </style>

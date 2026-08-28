@@ -1,0 +1,24 @@
+{
+  "sections": [
+    {
+      "id": "programacion",
+      "title": "Programación",
+      "items": []
+    },
+    {
+      "id": "creacion-contenido",
+      "title": "Creación de contenido",
+      "items": []
+    },
+    {
+      "id": "soporte-tecnico",
+      "title": "Soporte técnico",
+      "items": []
+    },
+    {
+      "id": "ingenieria-redes-sociales",
+      "title": "Ingeniería de redes sociales",
+      "items": []
+    }
+  ]
+}

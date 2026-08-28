@@ -5,20 +5,23 @@ import Layout from '../layouts/Layout.astro';
 	<section class="hero container">
 		<div class="hero-copy animate-on-scroll">
 			<p class="eyebrow"><span></span> Ingeniero en sistemas · Formación Legal</p>
-			<h1>Arturo<br /><em>Ramirez.</em></h1>
-			<p class="introduction">Trabajo en la intersección entre la tecnología, la ingeniería y el derecho. Conecto estas disciplinas para construir respuestas técnicas útiles, analíticas y bien fundamentadas.</p>
 			
+			<div class="hero-title-row">
+				<h1>Arturo<br /><em>Ramirez.</em></h1>
+				<div class="actions">
+					<a href="/contacto/" class="primary-button">Hablemos <span aria-hidden="true">↗</span></a>
+					<a href="/portfolio/" class="text-link">Conocer mi trabajo <span aria-hidden="true">→</span></a>
+				</div>
+			</div>
+
+			<p class="introduction">Trabajo en la intersección entre la tecnología, la ingeniería y el derecho. Conecto estas disciplinas para construir respuestas técnicas útiles, analíticas y bien fundamentadas.</p>
+
 			<div class="hero-skills">
 				<span>Software</span>
 				<span>Automatización</span>
 				<span>LegalTech</span>
 				<span>Electrónica</span>
 				<span>Análisis de Datos</span>
-			</div>
-
-			<div class="actions">
-				<a href="/contacto/" class="primary-button">Hablemos <span aria-hidden="true">↗</span></a>
-				<a href="/portfolio/" class="text-link">Conocer mi trabajo <span aria-hidden="true">→</span></a>
 			</div>
 		</div>
 	</section>
@@ -107,6 +110,7 @@ import Layout from '../layouts/Layout.astro';
 	.hero-copy { max-width:800px; }
 	.eyebrow { display:flex; align-items:center; gap:.7rem; margin:0 0 1.8rem; color:var(--forest); font-size:.77rem; font-weight:600; letter-spacing:.12em; text-transform:uppercase; }
 	.eyebrow span { width:36px; height:1px; background:var(--accent); }
+	.hero-title-row { display:flex; align-items:flex-end; justify-content:space-between; gap:2rem; flex-wrap:wrap; }
 	h1 { margin:0; font-family:'Manrope',sans-serif; font-size:clamp(4.2rem,10vw,8.2rem); font-weight:600; letter-spacing:-.075em; line-height:.84; }
 	h1 em { color:var(--accent); font-family:Georgia,serif; font-weight:400; }
 	.introduction { margin:2.4rem 0 0; color:var(--muted); font-size:clamp(1.05rem,2vw,1.25rem); }
@@ -114,7 +118,7 @@ import Layout from '../layouts/Layout.astro';
 	.hero-skills { display:flex; flex-wrap:wrap; gap:.7rem; margin-top:2.2rem; }
 	.hero-skills span { padding:.4rem .9rem; border:1px solid var(--line); border-radius:999px; color:var(--forest); font-size:.85rem; font-weight:600; background:rgba(23,63,56,.04); }
 
-	.actions { display:flex; align-items:center; gap:1.6rem; margin-top:2.6rem; }
+	.actions { display:flex; align-items:center; gap:1.6rem; margin-bottom:1.5rem; }
 	.primary-button { display:inline-flex; align-items:center; gap:1.2rem; padding:.85rem 1.1rem .85rem 1.35rem; border-radius:999px; background:var(--forest); color:var(--white); font-weight:600; text-decoration:none; }
 	.primary-button span { display:grid; place-items:center; width:30px; height:30px; border-radius:50%; background:var(--accent); }
 	.text-link { color:var(--forest); font-weight:600; text-underline-offset:.3rem; }

@@ -20,3 +20,13 @@ Consult these guides before working on related tasks:
 - [Adding or managing content](https://docs.astro.build/en/guides/content-collections/)
 - [Adding styles or using Tailwind](https://docs.astro.build/en/guides/styling/)
 - [Supporting multiple languages](https://docs.astro.build/en/guides/internationalization/)
+
+## Comandos Útiles (Recordatorio Obligatorio)
+
+Al final de todas tus respuestas, sin importar de qué tipo sean, DEBES incluir este recordatorio textualmente para el usuario:
+
+---
+**💡 Comandos útiles de nuestro proyecto:**
+- `npm run manage`: Inicia el menú interactivo. Sirve para gestionar fácilmente los proyectos y secciones de tu portafolio.
+- `npm run build`: Compila el proyecto Astro. Transforma nuestro código fuente en archivos estáticos listos para producción.
+- `npm run deploy`: Despliega el proyecto. Toma los archivos compilados y los sube a GitHub Pages para que estén en vivo.

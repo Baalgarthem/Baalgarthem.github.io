@@ -3,7 +3,20 @@
     {
       "id": "programacion",
       "title": "Programación",
-      "items": []
+      "items": [
+        {
+          "id": "cv-maker",
+          "title": "CV Maker",
+          "description": "La herramienta definitiva de escritorio diseñada para profesionales que buscan destacar. Construir tu currículum nunca había sido tan elegante, rápido y seguro.",
+          "images": [
+            {
+              "url": "https://github.com/Baalgarthem/cv-maker/raw/principal/assets/cv-maker-presentacion.webp",
+              "caption": "Presentación principal"
+            }
+          ],
+          "github": "https://github.com/Baalgarthem/cv-maker"
+        }
+      ]
     },
     {
       "id": "creacion-contenido",
